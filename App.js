@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { SafeAreaProvider,SafeAreaView } from 'react-native-safe-area-context';
+import TabNavigator from './Navigation/TabNavigation';
+import ChatStackNavigator from './Navigation/StackNavigation';
+import CollapseHeader from './components/collapsingHeader';
+import ChatDetail from './screens/ChatDetailsScreen';
+import ChatHeader from './components/chatHeader';
+import Calling from './screens/CallScreen';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ChatStackNavigator />
+      {/* <Calling /> */}
+    </SafeAreaProvider>
+    
   );
 }
 
